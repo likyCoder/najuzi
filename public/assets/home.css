@@ -1,0 +1,243 @@
+      .faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+}
+
+.faq-heading {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.faq-subheading {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+}
+
+.faq-accordion {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.faq-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: left;
+    background: #f9f9f9;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.faq-question:hover {
+    background: #f1f1f1;
+}
+
+.faq-question[aria-expanded="true"] {
+    background: #fff;
+    font-weight: 600;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.question-text {
+    flex: 1;
+    margin-right: 1rem;
+    font-size: 1.15rem;
+    color: #2c3e50;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: #3498db;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: #fff;
+}
+
+.faq-answer[aria-hidden="false"] {
+    padding: 1.5rem;
+    max-height: 500px;
+}
+
+.faq-answer p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.faq-cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.faq-cta p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.cta-button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #2980b9;
+}
+
+/* Accessibility focus styles */
+.faq-question:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Elder-friendly enhancements */
+@media (min-width: 768px) {
+    .faq-question {
+        font-size: 1.2rem;
+        padding: 1.8rem;
+    }
+    
+    .faq-answer p {
+        font-size: 1.15rem;
+        line-height: 1.7;
+    }
+    
+    .cta-button {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+
+.partner-section {
+  padding: 40px 20px;
+  background-color: #f9fbfd;
+  color: #1f2d3d;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.partner-section p {
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.partner-list {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+  column-gap: 40px;
+}
+
+.partner-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #2980b9;
+}
+
+.partner-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #f39c12;
+  font-size: 1rem;
+  top: 0;
+}
+  
+@media (max-width: 768px) {
+  .partner-list {
+    columns: 1;
+  }
+}
+.mb-4{
+    color:blue;
+}
+.pro-list {
+        list-style: none;
+        padding-left: 0;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .pro-list li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .pro-list li::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: #2e7d32; /* Green checkmark */
+        font-weight: bold;
+    }
+      .schools-list {
+        list-style: none;
+        padding-left: 0;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .schools-list li {
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #222;
+    }
+
+    .schools-list li::before {
+        content: "🏫";
+        position: absolute;
+        left: 0;
+        font-size: 18px;
+        color: #007acc; /* Optional: school-themed blue */
+    }
