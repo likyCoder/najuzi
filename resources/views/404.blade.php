@@ -24,7 +24,7 @@
             line-height: 1.6;
         }
         .error-hero {
-            background: linear-gradient(rgba(147, 147, 147, 0.7), rgba(92, 92, 92, 0.7)), url('{{ asset('assets/images/impact.png') }}') no-repeat center center/cover;
+            background: linear-gradient(rgba(1, 1, 1, 0.5),rgba(38, 0, 255, 0.826)), url('assets/images/impact.png') no-repeat center center;
             height: 300px;
             display: flex;
             align-items: center;

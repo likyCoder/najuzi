@@ -162,22 +162,26 @@
         .gallery-item:hover img {
             transform: scale(1.1);
         }
+        .excolor{
+            color:white;
+            font-weight: 600;
+        }
     </style>
 <body>
     @include('includes.header')
         <!-- Combined Hero Section with Background -->
 <section>
-  <div class="container-fluid bg-breadcrumb d-flex align-items-center justify-content-center" style="background: url('{{ asset('assets/images/impact.png') }}') no-repeat center center/cover; min-height: 70vh;background-color:#0d0445;">
+  <div class="container-fluid bg-breadcrumb d-flex align-items-center justify-content-center" style="background: linear-gradient(rgba(1, 1, 1, 0.5),rgba(38, 0, 255, 0.826)), url('assets/images/impact.png') no-repeat center center;">
     <div class="container text-center text-white py-5">
       <h1 class="display-4 mb-3 wow fadeInDown" data-wow-delay="0.1s" style="color: #ff8400;">
         Najuzi Tablet Library Module
       </h1>
-      <p class="lead mb-4 wow fadeInUp" data-wow-delay="0.2s">
+      <p class="lead mb-4 wow fadeInUp excolor" data-wow-delay="0.2s">
         Expanding digital learning directly into the classroom with our innovative tablet program
       </p>
-      <a href="#contact" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.3s" style="background-color: #ff8400; border: none;">
+      {{-- <a href="#contact" class="btn btn-primary btn-lg wow fadeInUp" data-wow-delay="0.3s" style="background-color: #ff8400; border: none;">
         Request Early Access
-      </a>
+      </a> --}}
       <!-- Breadcrumb -->
       <ol class="breadcrumb d-flex justify-content-center mt-4 wow fadeInDown" data-wow-delay="0.4s">
         <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>

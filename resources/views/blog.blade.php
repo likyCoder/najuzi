@@ -42,28 +42,35 @@
         <link rel="stylesheet" href="includes/header.css">
     </head>
     <style>
-      .hero {
-            background: linear-gradient(rgba(38, 0, 255, 0.826),hsl(0, 0.00%, 0.40%)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+          .hero-section {
+            background: linear-gradient(rgba(38, 0, 255, 0.826), rgba(1, 1, 1, 0.5)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
             background-size: cover;
             background-position: center;
-            color: rgb(255, 255, 255);
-            padding: 50px 0;
-            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .text-orange{
+          color: orangered;
+          padding: 120px 0 80px;
+
         }
     </style>
 <body>
     @include('includes.header')
     <main>
-      <!-- Hero Section with Animated Background -->
-      <section class="hero hero-section d-flex ">
-        <div class="container position-relative z-2" data-aos="fade-down">
-          <h1 class="display-4 fw-bold text-white mb-3 animate__animated animate__fadeInDown">Welcome to the Najuzi Digital Library Blog</h1>
-          <p class="lead text-white-50 mb-4 animate__animated animate__fadeInUp">Empowering Knowledge, Inspiring Growth</p>
-          <a href="#about" class="btn btn-light btn-lg shadow animate__animated animate__fadeInUp">Learn More</a>
+    <!-- Hero Section -->
+   <section class="hero hero-section d-flex ">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInDown text-orange">Welcome to the Najuzi Digital Library Blog</h1>
+                    <div class="d-flex justify-content-center gap-3 animate__animated animate__fadeInUp animate__delay-2s">
+                        <a href="#about" class="btn btn-light btn-lg shadow animate__animated animate__fadeInUp">Learn More</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(30, 42, 62, 0.45); z-index:1;"></div>
-      </section>
-
+    </section>
       <!-- About Section -->
       <section id="about" class="blog-section container py-5" data-aos="fade-up">
         <div class="row justify-content-center">

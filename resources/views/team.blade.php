@@ -44,10 +44,154 @@
         <link href="css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="includes/header.css">
     </head>
+      <style>
+            /* Team Section Styling */
+            .team-section {
+                padding: 80px 0;
+                background-color: #f9f9f9;
+            }
+            
+            .section-title {
+                text-align: center;
+                margin-bottom: 60px;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+                font-weight: 700;
+                color: #0d0445;
+                margin-bottom: 15px;
+            }
+            
+            .section-title p {
+                font-size: 18px;
+                color: #666;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            
+            .department-card {
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                margin-bottom: 30px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .department-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            .department-header {
+                background: linear-gradient(rgba(38, 0, 255, 0.826), rgba(1, 1, 1, 0.5)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+            
+            .department-header h3 {
+                margin: 0;
+                font-size: 24px;
+                font-weight: 800;
+                color: #ff8400;
+            }
+            
+            .team-members {
+                padding: 20px;
+            }
+            
+            .team-member {
+                display: flex;
+                align-items: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .team-member:last-child {
+                border-bottom: none;
+            }
+            
+            .member-img {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-right: 15px;
+                border: 3px solid #f1f1f1;
+            }
+            
+            .member-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .member-info h4 {
+                margin: 0 0 5px;
+                font-size: 18px;
+                color: #333;
+            }
+            
+            .member-info p {
+                margin: 0;
+                color: #666;
+                font-size: 14px;
+            }
+            
+            .member-social {
+                margin-left: auto;
+            }
+            
+            .member-social a {
+                color: #ff8400;
+                margin-left: 10px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+            }
+            
+            .member-social a:hover {
+                color: #0d0445;
+            }
+            
+            .department-icon {
+                font-size: 40px;
+                color: #ff8400;
+                margin-bottom: 15px;
+            }
+            
+            @media (max-width: 767px) {
+                .section-title h2 {
+                    font-size: 28px;
+                }
+                
+                .department-header h3 {
+                    font-size: 20px;
+                    color: #ff8400;
+                    font-weight: 800;
+                }
+                
+                .team-member {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                
+                .member-img {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+                
+                .member-social {
+                    margin-left: 0;
+                    margin-top: 10px;
+                }
+            }
+        </style>
 <body>
     @include('includes.header')
      <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb" style="background: url('{{ asset('assets/images/impact.png') }}') no-repeat center center/cover; background-color:#0d0445;">
+        <div class="container-fluid bg-breadcrumb" style="background: linear-gradient(rgba(1, 1, 1, 0.5),rgba(38, 0, 255, 0.826)), url('assets/images/impact.png') no-repeat center center;">
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our team </h4>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
@@ -60,86 +204,192 @@
             </div>
         </div>
         <!-- Header End -->
-      <main>
+    <main>
 
-        <!-- Team Start -->
-        @php
-            $team = [
-                [
-                    'img' => asset('assets/team/team.jpg'),
-                    'name' => 'Full Name',
-                    'position' => 'Position',
-                    'facebook' => '#',
-                    'twitter' => '#',
-                    'linkedin' => '#',
-                    'instagram' => '#',
-                    'delay' => '0.2s',
-                ],
-                [
-                    'img' => asset('assets/team/team.jpg'),
-                    'name' => 'Full Name',
-                    'position' => 'Position',
-                    'facebook' => '#',
-                    'twitter' => '#',
-                    'linkedin' => '#',
-                    'instagram' => '#',
-                    'delay' => '0.4s',
-                ],
-                [
-                    'img' => asset('assets/team/team.jpg'),
-                    'name' => 'Full Name',
-                    'position' => 'Position',
-                    'facebook' => '#',
-                    'twitter' => '#',
-                    'linkedin' => '#',
-                    'instagram' => '#',
-                    'delay' => '0.6s',
-                ],
-                [
-                    'img' => asset('assets/team/team.jpg'),
-                    'name' => 'Full Name',
-                    'position' => 'Position',
-                    'facebook' => '#',
-                    'twitter' => '#',
-                    'linkedin' => '#',
-                    'instagram' => '#',
-                    'delay' => '0.8s',
-                ],
-            ];
-        @endphp
-        <div class="container-fluid team pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Our Team</h4>
-                    <h1 class="display-5 mb-4">Meet Our Advisers</h1>
-                    <p class="mb-0">
-                        At Najuzi <span style="color:rgb(255, 132, 0);">Digital</span> Library Our Team is full of professionals that handle work in a professional way leaving both the Company and Clients happy
-                    </p>
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                    <h2>Meet Our Team</h2>
+                    <p>At Najuzi Digital Library, we have assembled a talented team of professionals dedicated to delivering exceptional digital library services.</p>
                 </div>
-                <div class="row g-4">
-                    @foreach($team as $member)
-                        <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="{{ $member['delay'] }}">
-                            <div class="team-item">
-                                <div class="team-img">
-                                    <img src="{{ $member['img'] }}" class="img-fluid" alt="">
+                
+                <div class="row">
+                    <!-- Marketing Department -->
+                    <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="department-card">
+                            <div class="department-header">
+                                <div class="department-icon">
+                                    <i class="fas fa-bullhorn"></i>
                                 </div>
-                                <div class="team-title">
-                                    <h4 class="mb-0">{{ $member['name'] }}</h4>
-                                    <p class="mb-0">{{ $member['position'] }}</p>
+                                <h3>Marketing Department</h3>
+                            </div>
+                            <div class="team-members">
+                                <div class="team-member">
+                                    <div class="member-img">
+                                        <img src="{{ asset('assets/team/team.jpg') }}" alt="Mr. Wanjama Frank">
+                                    </div>
+                                    <div class="member-info">
+                                        <h4>Mr. Wanjama Frank</h4>
+                                        <p>Sales</p>
+                                    </div>
+                                    <div class="member-social">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
                                 </div>
-                                <div class="team-icon">
-                                    <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="{{ $member['facebook'] }}"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="{{ $member['twitter'] }}"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="{{ $member['linkedin'] }}"><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-primary btn-sm-square rounded-circle me-0" href="{{ $member['instagram'] }}"><i class="fab fa-instagram"></i></a>
+                                <div class="team-member">
+                                    <div class="member-img">
+                                        <img src="{{ asset('assets/team/team.jpg') }}" alt="Mr. Kasirye William">
+                                    </div>
+                                    <div class="member-info">
+                                        <h4>Mr. Kasirye William</h4>
+                                        <p>Customer Care</p>
+                                    </div>
+                                    <div class="member-social">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
+                    
+                    <!-- Content Department -->
+                    <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="department-card">
+                            <div class="department-header">
+                                <div class="department-icon">
+                                    <i class="fas fa-pen-fancy"></i>
+                                </div>
+                                <h3>Content Department</h3>
+                            </div>
+                            <div class="team-members">
+                                <div class="team-member">
+                                    <div class="member-img">
+                                        <img src="{{ asset('assets/team/team.jpg') }}" alt="Mr. Ssekalembe Samson">
+                                    </div>
+                                    <div class="member-info">
+                                        <h4>Mr. Ssekalembe Samson</h4>
+                                        <p>Content Specialist</p>
+                                    </div>
+                                    <div class="member-social">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                                <div class="team-member">
+                                    <div class="member-img">
+                                        <img src="{{ asset('assets/team/team.jpg') }}" alt="Mr. Wagaba Adrian">
+                                    </div>
+                                    <div class="member-info">
+                                        <h4>Mr. Wagaba Adrian</h4>
+                                        <p>Content Specialist</p>
+                                    </div>
+                                    <div class="member-social">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                                <div class="team-member">
+                                    <div class="member-img">
+                                        <img src="{{ asset('assets/team/team.jpg') }}" alt="Ms. Marunga Ryhannah">
+                                    </div>
+                                    <div class="member-info">
+                                        <h4>Ms. Marunga Ryhannah</h4>
+                                        <p>Content Specialist</p>
+                                    </div>
+                                    <div class="member-social">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Technical Department -->
+                    <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="department-card">
+                            <div class="department-header">
+                                <div class="department-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h3>Technical Department</h3>
+                            </div>
+                            <div class="team-members">
+                                <div class="team-member">
+                                    <div class="member-img">
+                                        <img src="{{ asset('assets/team/team.jpg') }}" alt="Mr. Tumusime Crescent">
+                                    </div>
+                                    <div class="member-info">
+                                        <h4>Mr. Tumusime Crescent</h4>
+                                        <p>Technical Specialist</p>
+                                    </div>
+                                    <div class="member-social">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                                <div class="team-member">
+                                    <div class="member-img">
+                                        <img src="{{ asset('assets/team/team.jpg') }}" alt="Mr. Kasirye Andrew">
+                                    </div>
+                                    <div class="member-info">
+                                        <h4>Mr. Kasirye Andrew</h4>
+                                        <p>Technical Specialist</p>
+                                    </div>
+                                    <div class="member-social">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Coding Department -->
+                    <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="department-card">
+                            <div class="department-header">
+                                <div class="department-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h3>Coding Department</h3>
+                            </div>
+                            <div class="team-members">
+                                <div class="team-member">
+                                    <div class="member-img">
+                                        <img src="{{ asset('assets/team/team.jpg') }}" alt="Mr. Sekeba Augustine">
+                                    </div>
+                                    <div class="member-info">
+                                        <h4>Mr. Sekeba Augustine</h4>
+                                        <p>Software Developer</p>
+                                    </div>
+                                    <div class="member-social">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                                <div class="team-member">
+                                    <div class="member-img">
+                                        <img src="{{ asset('assets/team/team.jpg') }}" alt="Ms. Nakiwala Leticia">
+                                    </div>
+                                    <div class="member-info">
+                                        <h4>Ms. Nakiwala Leticia</h4>
+                                        <p>Software Developer</p>
+                                    </div>
+                                    <div class="member-social">
+                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Team End -->
+        </section>
 
     </main>
    

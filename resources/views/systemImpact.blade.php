@@ -123,7 +123,7 @@
     @include('includes.header')
          <!-- Hero Section -->
     <section>
-        <div class="container-fluid bg-breadcrumb" style="background: url('assets/images/impact.png') no-repeat center center/cover; background-color:#0d0445;">
+        <div class="container-fluid bg-breadcrumb" style="background: linear-gradient(rgba(1, 1, 1, 0.5),rgba(38, 0, 255, 0.826)), url('assets/images/impact.png') no-repeat center center;">
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h1 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Impact of Najuzi Digital Library</h1>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
