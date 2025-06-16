@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
 # Install PHP extensions
 RUN docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd zip
 
-# Enable Apache mod_rewrite and configure document root
+# Configure Apache
 RUN a2enmod rewrite && \
     sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf && \
     sed -ri -e 's!/var/www/!/var/www/html/public!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
@@ -23,7 +23,7 @@ RUN a2enmod rewrite && \
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy only necessary files (using .dockerignore)
+# Copy application files
 COPY . .
 
 # Install dependencies and optimize
@@ -35,8 +35,5 @@ RUN composer install --optimize-autoloader --no-dev && \
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Expose Apache port
 EXPOSE 80
-
-# Start Apache
 CMD ["apache2-foreground"]
