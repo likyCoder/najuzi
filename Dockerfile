@@ -16,6 +16,10 @@ RUN docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd zip
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
+# Configure Apache to use public directory
+RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/!/var/www/html/public!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -24,6 +28,14 @@ COPY . .
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Install dependencies (composer install should run before setting permissions)
+RUN composer install --optimize-autoloader --no-dev
+
+# Production optimizations
+RUN php artisan config:cache && \
+    php artisan route:cache && \
+    php artisan view:cache
 
 # Expose Apache port
 EXPOSE 80
